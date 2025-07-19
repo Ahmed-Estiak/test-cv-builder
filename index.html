@@ -50,13 +50,17 @@
         web applications.
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quae ratione, aperiam, praesentium illum fugit labore cumque numquam ut, nam nesciunt obcaecati nostrum doloribus! Dolore temporibus assumenda veritatis, enim nemo voluptates impedit aliquam accusantium harum repudiandae optio praesentium. Beatae tenetur voluptate, quod eveniet odio inventore ex natus doloribus provident deserunt quasi totam expedita odit dolorum maxime soluta cum ratione omnis distinctio at facilis laboriosam. Enim minima, praesentium facere eaque facilis nostrum perferendis eum, tempora quos provident tenetur similique earum ducimus nulla illum perspiciatis harum voluptatum voluptas! Rerum animi eos 
         deleniti provident veniam. Maiores accusantium fugiat pariatur et placeat explicabo dignissimos?
-        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis beatae quod perferendis earum. Consequuntur, laudantium! Voluptatem adipisci vel odio reiciendis. Tempore libero rerum sed voluptas autem delectus, nostrum voluptatum sapiente totam, ex, doloremque quae. Quaerat, ipsam rem ratione nobis velit in? Laborum sed autem mollitia qui magnam reprehenderit, expedita quia ipsum nisi perferendis odio animi illum earum sunt! Quibusdam ipsum vel tempora nobis quos hic ipsa dolor expedita ad deleniti aliquam delectus ex eum omnis at facere harum, eius fugiat doloribus! Aliquam exercitationem rerum in mollitia perspiciatis necessitatibus architecto eum asperiores aut? Nesciunt sint placeat temporibus iusto, quam velit exercitationem.
       
       </p>
   
     </div>
   </div>
 </section>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top">⬆</button>
+
 
 </body>
 
@@ -90,6 +94,24 @@
   }
   
   type(); // Start typing effect*/
+
+  window.onscroll = function() {
+    scrollFunction();
+  };
+  function scrollFunction() {
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  }
+  document.getElementById("scrollTopBtn").addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
 
 
 </script>
