@@ -11,7 +11,8 @@
   
   <div class="name">
     <h1>Ahmed Estiak</h1>
-    <p>Frontend Developer</p>
+    <p><span id="auto-text"></span></p>
+    <!--<p>Frontend Developer</p>-->
   </div>
   
 </header>
@@ -58,4 +59,22 @@
 </section>
 
 </body>
+
+<script>
+  const texts = ["Frontend Developer", "Data Analyst", "Machine Learning Enthusiast"];
+  let index = 0;
+  const autoText = document.getElementById("auto-text");
+  function changeText(){
+    autoText.textContent = texts[index];
+    index = (index + 1) % texts.length;
+  }
+  setInterval(changeText, 2000);
+  changeText(); // Initial call to set the first text immediately
+  
+
+
+
+</script>
+
+
 </html>
