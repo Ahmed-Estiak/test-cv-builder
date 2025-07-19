@@ -61,7 +61,7 @@
 </body>
 
 <script>
-  const texts = ["Frontend Developer", "Data Analyst", "Machine Learning Enthusiast"];
+  /*const texts = ["Frontend Developer", "Data Analyst", "Machine Learning Enthusiast"];
   let index = 0;
   const autoText = document.getElementById("auto-text");
   function changeText(){
@@ -69,9 +69,27 @@
     index = (index + 1) % texts.length;
   }
   setInterval(changeText, 2000);
-  changeText(); // Initial call to set the first text immediately
+  changeText(); // Initial call to set the first text immediately*/
+  const texts = ["Frontend Developer", "Data Analyst", "Machine Learning Enthusiast"];
+  let count=0;
+  let index=0; 
+  let currentText = '';
+  let letter = '';
+  function type() {
+    if (count === texts.length) {
+      count = 0;
+    }
+    currentText = texts[count];
+    letter = currentText.slice(0, ++index);
+    document.getElementById('auto-text').textContent = letter;
+    if (letter.length === currentText.length) {
+      count++;
+      index = 0;
+    }
+    setTimeout(type, 100);
+  }
   
-
+  /*type(); // Start typing effect*/
 
 
 </script>
