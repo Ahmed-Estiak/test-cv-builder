@@ -30,7 +30,7 @@
     </div>
     </div>
     <div class="about-text">
-      <h1 style="color: #4b5563;">Hey there<span style="color: #4affae">!</span></h1>
+      <h1 style="color: #4b5563;"><span id="auto-big-text"></span><span id="exclaim" style="color: #4affae"></span></h1>
       <p>
         I'm Ahmed Estiak, a passionate Frontend Developer currently learning React and 
         JavaScript. I love building clean, user-friendly interfaces and enjoy combining logic 
@@ -112,6 +112,56 @@
       behavior: "smooth"
     });
   });
+const text = "Hey there";
+const autoText = document.getElementById("auto-big-text");
+const exclaim = document.getElementById("exclaim");
+
+let i = 0;
+
+function typeEffect() {
+  if (i <= text.length) {
+    autoText.innerText = text.slice(0, i++);
+    setTimeout(typeEffect, 180);
+  } else {
+    setTimeout(() => {
+      autoText.innerText = "";
+      exclaim.innerText = "";
+      i = 0;
+      typeEffect();
+    }, 2500); // Wait 1.5s before repeating
+  }
+}
+
+typeEffect();
+
+/*const text = "Hey there";
+const autoText = document.getElementById("auto-big-text");
+const exclaim = document.getElementById("exclaim");
+
+let i = 0;
+
+function typeEffect() {
+  if (i < text.length) {
+    autoText.innerText += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 120);
+  } else {
+    exclaim.innerText = "!";
+    setTimeout(() => {
+      autoText.innerText = "";
+      exclaim.innerText = "";
+      i = 0;
+      typeEffect();
+    }, 1500); // Wait 1.5s before repeating
+  }
+}
+
+typeEffect();
+*/
+
+
+
+
 
 
 </script>

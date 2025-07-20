@@ -20,12 +20,21 @@ nav{
   font-weight: bold;
   border-right: 2px solid #4affae;
   padding-right: 4px;
-  animation: blink 0.7s infinite;
+  animation: blink 1.0s infinite;
 }
+
+#auto-big-text::after {
+  content: '!';
+  animation: blink 0.7s infinite;
+  color: #4affae
+}
+
+
 
 @keyframes blink {
   50% {
     border-color: transparent;
+    opacity: 0;
   }
 }
 
